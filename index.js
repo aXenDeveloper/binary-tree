@@ -38,6 +38,26 @@ BinarySearchTree.prototype.push = function (val) {
   }
 };
 
+BinarySearchTree.prototype.findMin = function () {
+  let current = this.root;
+
+  while (current.left) {
+    current = current.left;
+  }
+
+  return current.value;
+};
+
+BinarySearchTree.prototype.findMax = function () {
+  let current = this.root;
+
+  while (current.right) {
+    current = current.right;
+  }
+
+  return current.value;
+};
+
 var bst = new BinarySearchTree();
 bst.push(3);
 bst.push(2);
@@ -45,4 +65,6 @@ bst.push(4);
 bst.push(1);
 bst.push(5);
 
-console.log(bst);
+// console.log(bst);
+console.log(bst.findMin());
+console.log(bst.findMax());
